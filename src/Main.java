@@ -2,6 +2,7 @@ import RSASIG.*;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         String PriKey = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDy++sEwc1Zz1n2" +
                 "PPgdgSaUNUIUn1dLY1l+oehWuBWwOm+QX5cYsrj62/2t0iRPdIrhvi8U5fvfTJRA" +
                 "AfhXH6NiIx9xkAOx3g9mE6PfPNKH0eUu6SuVi2rOeCSaM/PWpWPbp84+PdQct9yR" +
@@ -28,13 +29,13 @@ public class Main {
                 "dLlvVFedictRf+DHn+L0mu5s2uvbHYQWlA/Ls6YCeQXN4GBG0yZmX1V699lv1mEL" +
                 "gSCOf1DJl/kRYaBxN7pgb4eIo/A4iPkZyNPrOW+LUFGglpBDim2y73WIl8AKBYXW" +
                 "DvnG6yzCimfAHD80tCISJNQ=";
-        String PubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8vvrBMHNWc9Z9jz4HYEm\n" +
-                "lDVCFJ9XS2NZfqHoVrgVsDpvkF+XGLK4+tv9rdIkT3SK4b4vFOX730yUQAH4Vx+j\n" +
-                "YiMfcZADsd4PZhOj3zzSh9HlLukrlYtqzngkmjPz1qVj26fOPj3UHLfckZkzN+Ei\n" +
-                "YIHesWCQncuBPuqKpS+UHnoB1X37/SNX0pAxiEM1fPunPmG3c99NE7ApI06j86By\n" +
-                "HNoe7YJ/iXmcOtMXrO3GY43jZx+l+h7ZfXSL1Ehr01PZB0DXJNXSjIVLeIJVnLtM\n" +
-                "2EnMD3qmBPfSh//8JtCoIgMJT7uJq+FrdcBeIQ3YhSCRUhsxzjlYE8LZbKr3RVDF\n" +
-                "OwIDAQAB";
+        String PubKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqKpM2rTY0EhdRkLWw6bQ\n" +
+                "m4XDhgrevjvyfEB0SC7gOxoaSfw9I2Bcxi5GZOFQlkiBA4wy4a4uXpZccbbu92A4\n" +
+                "r2xA8sY35SpZAFxuxwKWVodhunoCw02Eaof2AEDIltWk6ahNCssy4rqiePRB6EU7\n" +
+                "YzqvO1gV19o4oYGAQxQR7pd9BhdqZF/inpeNP0ddsRBnXlWyC5J8XLJ2hdT3G2WE\n" +
+                "fF7aOWgRsbdfdD7HRAfTCIX1kR++LylcgtdGylCN8MRhJuFqG6m8N5N/lNt3tanD\n" +
+                "ZXCqIrrojBS7aDANERmUI6uhkqgkUGjXcxzkM3a9uz+lpW6dmzq0HAnwoorHtTWt\n" +
+                "oQIDAQAB";
 
 
         String content = "1234567890";
@@ -43,7 +44,8 @@ public class Main {
         System.out.println("签名原串：" + content);
         System.out.println("签名串：" + signstr);
         System.out.println("---------------公钥校验签名------------------");
-
+        signstr = "mLD5xZcz5+OKCMtaN8Z1RJAn73MPJyLAFrxUI7ToRrB+INKFxGSbqvFnKKCuJCsTodEa5f5x2BZ4UI4yxNqveZKML/gEOKJyk0DDzFPGOxwipbYQQhjWzx3XLFecpB8mcuTrEVWnkQeDZfL668rwcsVNX/KORFlbhfUpKsw+zg0Vjls8rnEUeavi7h3x4toue7mPAkMHrexKnkyaccSA3bxOC3+83HfvysDHFK4xBFLFuz22AiR+tT/gUtTNYwtg0RhiVP1wIhq3LhFL7jRJIVObUGJROX91n4MF3YNQzJMrVKRplEceBc7WDjj9k0ss+Ue6/bFsdI/bhXBQwgZW2Q==";
+        content = "{\"ins_id_cd\":\"10002887\",\"chn_ins_id_cd\":\"10002887\",\"prod_cd\":\"1151\",\"biz_cd\":\"0000007\",\"mcht_cd\":\"996180919290861\",\"tran_dt_tm\":\"20180921130928\",\"order_id\":\"2018123456789111\",\"tran_amt\":\"1\",\"qr_code_info\":{\"noti_url\":\"http:\\/\\/192.168.30.10:8088\\/prodpmpnotify\",\"sub_user_id\":\"071RvxRB06w5qf2Lp5TB0VzlRB0RvxR0\",\"sub_app_id\":\"wxf706feff0ab830c4\"},\"tran_cd\":\"1191\"}";
         boolean ok = RSASignature.doCheck(content, signstr, PubKey);
         System.out.println("验签结果：" + ok);
 
@@ -84,5 +86,18 @@ public class Main {
         //私钥加密过程
 
         System.out.println();
+
+        */
+
+        System.out.println("--------------MD5+BASE64-------------------");
+        try {
+            String password2 = "827358268";
+            String cipher = EncodeUtil.md5EncryptBase64(password2);
+            System.out.println(cipher);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
